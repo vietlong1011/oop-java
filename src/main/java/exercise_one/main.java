@@ -1,9 +1,7 @@
 package exercise_one;
 
 import exercise_one.dto.Cadres;
-import exercise_one.dto.Employee;
-import exercise_one.dto.Engineer;
-import exercise_one.dto.Personnel;
+import exercise_one.job.ActionCadres;
 import exercise_one.job.ActionEmployee;
 import exercise_one.job.ActionEngineer;
 import exercise_one.job.ActionPersonel;
@@ -12,7 +10,7 @@ import exercise_one.job.ActionPersonel;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
+public class main extends ActionCadres{
     static Cadres cadres = new Cadres();
     public static void menu(){
         System.out.println("Quan ly can bo");
@@ -22,6 +20,7 @@ public class main {
         System.out.println("4 : Exit !!!");
     }
     public static void main(String[] args) {
+        ActionCadres actionCadres = new ActionCadres();
         Scanner sc = new Scanner(System.in);
         while (true) {
             menu();
@@ -57,11 +56,11 @@ public class main {
                 case "2": {
                     System.out.print("Nhap ten can tim: ");
                     String searchName = sc.nextLine();
-                    cadres.searchByName(searchName);
+                   actionCadres.searchByName(searchName);
                     break;
                 }
                 case "3": {
-                    cadres.display();
+                    actionCadres.display();
                     break;
                 }
                 case "4": {

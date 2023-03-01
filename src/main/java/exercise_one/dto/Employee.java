@@ -2,7 +2,9 @@ package exercise_one.dto;
 
 public class Employee extends Cadres {
     private int level;
-    public Employee(){};
+    public Employee(){
+    };
+
     public int getLevel() {
         return level;
     }

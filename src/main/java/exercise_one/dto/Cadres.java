@@ -8,11 +8,7 @@ public class Cadres {
     private int old ;
     private String gender;
     private String address;
-    protected List<Cadres> cadres ;
-    public Cadres() {
-        this.cadres = new ArrayList<>();
-    }
-
+    public Cadres(){};
     public Cadres(String name, int old, String gender, String address) {
         this.name = name;
         this.old = old;
@@ -52,27 +48,6 @@ public class Cadres {
         this.address = address;
     }
 
-    public void add(Cadres cadres) {
-        this.cadres.add(cadres);
-    }
-    public void searchByName(String name) {
-        boolean found = false;
-        for (Cadres c : cadres) {
-            if ( c.getName().equalsIgnoreCase(name)) {
-                System.out.println(c);
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("Khong tim thay nhan vien ten " + name);
-        }
-    }
-
-    public void display() {
-        for (Cadres e : cadres) {
-                System.out.println(e.toString());
-        }
-    }
 
     @Override
     public String toString() {

@@ -6,7 +6,7 @@ import exercise_one.dto.Personnel;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ActionPersonel {
+public class ActionPersonel extends ActionCadres{
     static Scanner sc = new Scanner(System.in);
     private Cadres cadres;
 
@@ -14,18 +14,11 @@ public class ActionPersonel {
         this.cadres = cadres;
     }
     public  void addPersonel(){
-        System.out.print("Nhap name can them : ");
-        String name = sc.nextLine();
-        System.out.print("Nhap tuoi can them : ");
-        int age = Integer.parseInt(sc.nextLine());
-        System.out.print("Nhap gioi tinh can them : ");
-        String gender = sc.nextLine();
-        System.out.print("Nhap dia chi can them : ");
-        String address = sc.nextLine();
-        System.out.print("Nhap cong viec cua cong nhan: ");
+        Cadres cadres = addCadres();
+        System.out.print("Nhap cong viec cua nhan vien : ");
         String work = sc.nextLine();
-        Cadres personnel = new Personnel(name, age, gender, address, work);
-        cadres.add(personnel);
+        Cadres personnel = new Personnel(cadres.getName(), cadres.getOld(), cadres.getGender(),cadres.getAddress(), work);
+        cadresList.add(personnel);
         System.out.println(personnel.toString());
     }
 }
