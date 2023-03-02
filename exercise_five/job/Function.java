@@ -32,7 +32,7 @@ public class Function {
         }
     }
 
-    public void deletePerson(ArrayList<Person> personList) {
+    public void deletePerson() {
         System.out.print("Nhap ma khach hang can xoa : ");
         int delete = Integer.parseInt(sc.nextLine());
         for (Person p : personList) {
@@ -42,6 +42,10 @@ public class Function {
                 break;
             }
         }
+        for (Person p : personList) {
+            System.out.println(p.toString());
+        }
+
     }
 
     public void addHotel(ArrayList<Hotel> hotelList) {
@@ -58,19 +62,19 @@ public class Function {
         Hotel hotel = new Hotel(date, room, personList);
         hotelList.add(hotel);
         for (Hotel h : hotelList) {
-            System.out.println(h.toString() + "\nGia thue phong " +money(h));
+            System.out.println(h.toString() + "\nGia thue phong " + money(h));
         }
     }
-    public double money(Hotel hotel){
+
+    public double money(Hotel hotel) {
         double money = 0;
-        if((hotel.getRoom()).equalsIgnoreCase("A"))
-        {
+        if ((hotel.getRoom()).equalsIgnoreCase("A")) {
             money = hotel.getDate() * 500;
         } else if ((hotel.getRoom()).equalsIgnoreCase("B")) {
             money = hotel.getDate() * 300;
         } else if ((hotel.getRoom()).equalsIgnoreCase("C")) {
             money = hotel.getDate() * 100;
-        }else {
+        } else {
             System.out.println("Loai phong khong hop le");
         }
         return money;

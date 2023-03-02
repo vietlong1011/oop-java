@@ -2,9 +2,6 @@ package exercise_one.dto;
 
 public class Engineer extends  Cadres {
     private String classTraining;
-
-    public Engineer() {
-    }
     public String getClassTraining() {
         return classTraining;
     }

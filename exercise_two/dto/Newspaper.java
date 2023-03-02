@@ -1,21 +1,14 @@
 package exercise_two.dto;
 
 public class Newspaper extends Document {
-    private int date;
+    private String date;
 
-    public Newspaper(String documentID, String publisher, int numCopies, int date) {
+    public Newspaper(String documentID, String publisher, int numCopies, String date) {
         super(documentID, publisher, numCopies);
-        this.date = date;
-    }
-    public int getDate() {
-        return date;
-    }
-
-    public void setDate(int date) {
         this.date = date;
     }
     @Override
     public String toString() {
-        return super.toString() + String.format("%5d", date);
+        return super.toString() + String.format("%5s", date);
     }
 }

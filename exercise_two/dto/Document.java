@@ -17,26 +17,9 @@ public class Document {
         return documentID;
     }
 
-    public void setDocumentID(String documentID) {
-        this.documentID = documentID;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-    public int getNumCopies() {
-        return numCopies;
-    }
-    public void setNumCopies(int numCopies) {
-        this.numCopies = numCopies;
-    }
     @Override
     public String toString() {
-        return String.format("%10s%20s%5d", documentID, publisher, numCopies);
+        return String.format("%10s%20s%10d", documentID, publisher, numCopies);
     }
 
 }

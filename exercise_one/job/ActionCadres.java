@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 public class ActionCadres {
     static Scanner sc = new Scanner(System.in);
-    public static ArrayList<Cadres> cadresList = new ArrayList<>();
+    public  ArrayList<Cadres> cadresList = new ArrayList<>();
+
     public Cadres addCadres(){
         System.out.print("Nhap name can them : ");
         String name = sc.nextLine();

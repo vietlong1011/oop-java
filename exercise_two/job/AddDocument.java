@@ -39,7 +39,7 @@ public class AddDocument {
         System.out.print("Nhap So phat hanh :");
         int issueNum = Integer.parseInt(sc.nextLine());
         System.out.print("Nhap Thang phat hanh :");
-        int month = Integer.parseInt(sc.nextLine());
+        String month =sc.nextLine();
         Document magazine= new Magazine(documentID,publisher,numCopies,issueNum,month);
         this.function.addDocument(magazine);
         System.out.println(magazine.toString());
@@ -52,7 +52,7 @@ public class AddDocument {
         System.out.print("Nhap So ban phat hanh :");
         int numCopies = Integer.parseInt(sc.nextLine());
         System.out.print("Nhap Ngay phat hanh :");
-        int date = Integer.parseInt(sc.nextLine());
+        String date = sc.nextLine();
         Document newspaper = new Newspaper(documentID,publisher,numCopies,date);
         this.function.addDocument(newspaper);
         System.out.println(newspaper.toString());
