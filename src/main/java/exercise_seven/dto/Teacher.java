@@ -13,7 +13,7 @@ public class Teacher extends Person{
         this.teachersList = new ArrayList<>();
     };
 
-    public Teacher(double hardSalary, double bonus, double money,double penalty, Person person) {
+    public Teacher(double hardSalary, double bonus,double penalty, double money, Person person) {
         this.hardSalary = hardSalary;
         this.bonus = bonus;
         this.money = money;
@@ -66,8 +66,10 @@ public class Teacher extends Person{
         return "Teacher{" +
                 "hardSalary=" + hardSalary +
                 ", bonus=" + bonus +
+                ", penalty=" + penalty +
                 ", money=" + money +
                 ", person=" + person +
+                ", teachersList=" + teachersList +
                 '}';
     }
 }

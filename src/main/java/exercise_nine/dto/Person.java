@@ -3,12 +3,12 @@ package exercise_nine.dto;
 public class Person {
     private String namePerson;
     private int homeNumber;
-    private float electricNumber;
+    private int electricNumber;
 
     public Person() {
     }
 
-    public Person(String namePerson, int homeNumber, float electricNumber) {
+    public Person(String namePerson, int homeNumber, int electricNumber) {
         this.namePerson = namePerson;
         this.homeNumber = homeNumber;
         this.electricNumber = electricNumber;
@@ -30,11 +30,11 @@ public class Person {
         this.homeNumber = homeNumber;
     }
 
-    public float getElectricNumber() {
+    public int getElectricNumber() {
         return this.electricNumber;
     }
 
-    public void setElectricNumber(float electricNumber) {
+    public void setElectricNumber(int electricNumber) {
         this.electricNumber = electricNumber;
     }
 

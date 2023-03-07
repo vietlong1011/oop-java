@@ -16,65 +16,56 @@ public class Functions {
     }
 
     public Person addPerson() {
-        Person person = new Person();
+
         System.out.print("Nhap ho ten khach hang: ");
-        person.setNamePerson(this.sc.nextLine());
+        String namePerson = sc.nextLine();
         System.out.print("Nhap so nha cua khach hang: ");
-        person.setHomeNumber(Integer.parseInt(this.sc.nextLine()));
+        int homeNumber = Integer.parseInt(sc.nextLine());
         System.out.print("Nhap ma so cong to dien: ");
-        person.setElectricNumber(Float.parseFloat(this.sc.nextLine()));
-        System.out.println("Person : " + String.valueOf(person));
+        int electricNumber = Integer.parseInt(sc.nextLine());
+        Person person = new Person(namePerson,homeNumber,electricNumber);
         return person;
     }
 
     public void addBill() {
-        Bill bill = new Bill();
         System.out.println("\n\tNhap thong tin ho su dung dien ");
         System.out.print("Nhap so ho can them: ");
         int billNumber = Integer.parseInt(this.sc.nextLine());
-
         for (int i = 1; i <= billNumber; ++i) {
             System.out.println("\nNhap thong tin khach hang thu " + i);
-            bill.setPerson(this.addPerson());
             boolean checkBill = true;
-
             while (checkBill) {
+                Person person = addPerson();
                 System.out.print("Nhap chi so dien cu: ");
-                bill.setElectricOld(Integer.parseInt(this.sc.nextLine()));
+               int electricOld = Integer.parseInt(sc.nextLine());
                 System.out.print("Nhap chi so dien moi: ");
-                bill.setGetElectricNew(Integer.parseInt(this.sc.nextLine()));
-                if (bill.getGetElectricNew() > bill.getElectricOld()) {
-                    bill.setPrice((bill.getGetElectricNew() - bill.getElectricOld()) * 5);
+                int electricNew = Integer.parseInt(sc.nextLine());
+                int prince = 1;
+                if (electricNew > electricOld) {
+                   prince = ((electricNew - electricOld) * 5);
                     checkBill = false;
                 } else {
                     System.out.println("Gia tri khong hop le ,nhap lai");
                 }
+                Bill bill = new Bill(electricOld,electricNew,prince,person);
+                this.billList.add(bill);
             }
-
-            this.billList.add(bill);
         }
 
     }
-    // vong lap dang chet o doi tuong xoa?
     public void deleteBillPerson() {
         System.out.print("Nhap so nha can xoa : ");
         int delete = Integer.parseInt(this.sc.nextLine());
-        boolean check = true;
-        while (check ) {
             for (Bill b : billList) {
-                if (String.valueOf(delete).equals(String.valueOf(b.getPerson().getHomeNumber()))) {
+               // if (String.valueOf(delete).equals(String.valueOf(b.getPerson().getHomeNumber()))) {
+                if (delete == b.getPerson().getHomeNumber()) {
                     this.billList.remove(b);
-                    System.out.println("Delete successfully " + String.valueOf(b));
-                    check = false;
+                    System.out.println("Delete successfully " );
                     break;
-                } else {
-                    System.out.println("Khach hang khong ton tai " + delete + "and" + b.getPerson().getHomeNumber());
+                }else {
+                    System.out.println("Xoa that bai");
                 }
             }
-        }
-        for (Bill b : billList) {
-            System.out.println(b.toString());
-        }
     }
 
     public void display() {
@@ -83,7 +74,4 @@ public class Functions {
         }
     }
 
-
-    public void editBillPerson() {
-    }
 }

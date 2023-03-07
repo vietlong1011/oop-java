@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    ArrayList<Teacher> teachers = new ArrayList<>();
     public static void main(String[] args) {
         Functions functions = new Functions();
         System.out.print("Nhap so luong giao vien can them : ");

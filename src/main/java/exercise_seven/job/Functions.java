@@ -51,7 +51,7 @@ public class Functions extends Teacher {
         for (Teacher t : teachersList) {
             if (delete.equalsIgnoreCase(t.person.getIdTeacher())) {
                 teachersList.remove(t);
-                System.out.println("co ton tai");
+                System.out.println("xoa thanh cong");
             }
             break;
         }
