@@ -16,7 +16,6 @@ public class Functions {
     }
 
     public Person addPerson() {
-
         System.out.print("Nhap ho ten khach hang: ");
         String namePerson = sc.nextLine();
         System.out.print("Nhap so nha cua khach hang: ");
@@ -61,7 +60,6 @@ public class Functions {
                 if (delete == b.getPerson().getHomeNumber()) {
                     this.billList.remove(b);
                     System.out.println("Delete successfully " );
-                    break;
                 }else {
                     System.out.println("Xoa that bai");
                 }
