@@ -57,10 +57,10 @@ public class Functions {
         System.out.print("Nhap so nha can xoa : ");
         int delete = Integer.parseInt(this.sc.nextLine());
         boolean checkHome = true;
-        for (Bill b : billList) {
+      for (int i = 0 ; i < billList.size();i++){
             // if (String.valueOf(delete).equals(String.valueOf(b.getPerson().getHomeNumber()))) {
-            if (delete == b.getPerson().getHomeNumber()) {
-                this.billList.remove(b);
+            if (delete == billList.get(i).getPerson().getHomeNumber()) {
+                this.billList.remove(billList.get(i));
                 System.out.println("Delete successfully ");
                 checkHome = false;
             }
